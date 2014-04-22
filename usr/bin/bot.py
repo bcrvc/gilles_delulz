@@ -30,4 +30,4 @@ trend_hashtag = hashtags[0]
 # Tweet every xx min ...
 for line in f:
 	api.update_status(trend_hashtag + ' ' + line)
-	time.sleep(1800) 
+	time.sleep(1800)
