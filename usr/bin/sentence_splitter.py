@@ -1,7 +1,7 @@
 import re
  
 # open the file to be formatted 
-filename=open('sdstest.txt','r')
+filename=open('input.txt','r')
 f=filename.read()
 filename.close()
  
@@ -11,6 +11,6 @@ lines = re.sub(pat,'.\n',f)
 print lines 
  
 # write the formatted text into a new txt file 
-filename = open("out.txt", "w")
+filename = open("output.txt", "w")
 filename.write(lines)
 filename.close()
