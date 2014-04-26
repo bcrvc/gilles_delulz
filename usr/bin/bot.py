@@ -19,15 +19,15 @@ filename=open(argfile,'r')
 f=filename.readlines()
 filename.close()
 
-# get Twitter trends data and extract top trending hashtag
-trends1 = api.trends_place(1)
-# print trends1
-hashtags = [x['name'] for x in trends1[0]['trends'] if x['name'].startswith('#')]
-# print hashtags
-# print hashtags[0]
-trend_hashtag = hashtags[0]
- 
-# Tweet every xx min ...
 for line in f:
-	api.update_status(trend_hashtag + ' ' + line)
-	time.sleep(1800) 
+        # get Twitter trends data and extract top trending hashtag
+	trends1 = api.trends_place(1)
+	print trends1
+	hashtags = [x['name'] for x in trends1[0]['trends'] if x['name'].startswith('#')]
+	# print hashtags
+	# print hashtags[0]
+        print hashtags[0]
+        trend_hashtag = hashtags[0]
+        api.update_status(line + ' ' + trend_hashtag)
+        # Tweet every xx min ...
+        time.sleep(10800)
