@@ -29,5 +29,5 @@ for line in f:
         print hashtags[0]
         trend_hashtag = hashtags[0]
         api.update_status(line + ' ' + trend_hashtag)
-        # Tweet every xx min ...
+        # Tweet every xx sec ...
         time.sleep(10800)
